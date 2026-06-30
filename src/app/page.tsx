@@ -74,6 +74,7 @@ function JsonLd() {
     description:
       "Empresa especializada em limpeza pós-obra premium, polimento, restauração e impermeabilização de pisos e pedras nobres.",
     image: "/images/stone/transition-after.jpeg",
+    logo: company.logo,
     telephone: company.phoneDisplay,
     priceRange: "Sob consulta",
     address: {

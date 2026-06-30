@@ -1,8 +1,9 @@
 "use client";
 
 import { ChevronRight, Menu, MessageCircle, X } from "lucide-react";
+import Image from "next/image";
 import { useState } from "react";
-import { navItems, whatsappHref } from "@/lib/content";
+import { company, navItems, phoneHref, whatsappHref } from "@/lib/content";
 
 function scrollToSection(id: string) {
   const target = document.getElementById(id);
@@ -26,8 +27,15 @@ export function Header() {
           className="group flex items-center gap-3 text-left"
           aria-label="Voltar para o início"
         >
-          <span className="flex h-11 w-11 items-center justify-center rounded-[8px] border border-[#d9be7b]/50 bg-[#f6f1e8] text-sm font-semibold text-[#201d18]">
-            RP
+          <span className="relative h-[52px] w-[52px] overflow-hidden rounded-full border border-[#d9be7b]/65 bg-[#0e0c09] shadow-[0_0_28px_rgba(217,190,123,0.24)]">
+            <Image
+              src={company.logo}
+              alt="Logo Renovarte Piso"
+              fill
+              sizes="52px"
+              className="object-cover"
+              priority
+            />
           </span>
           <span className="leading-tight">
             <span className="block text-sm font-semibold uppercase tracking-[0.22em] text-[#e8d49b]">
@@ -52,7 +60,13 @@ export function Header() {
           ))}
         </nav>
 
-        <div className="hidden items-center gap-3 lg:flex">
+        <div className="hidden items-center gap-4 lg:flex">
+          <a
+            href={phoneHref}
+            className="text-right text-xs font-semibold uppercase tracking-[0.14em] text-white/[0.72] transition hover:text-[#e8d49b]"
+          >
+            {company.phoneDisplay}
+          </a>
           <a
             href={whatsappHref}
             target="_blank"
@@ -87,11 +101,28 @@ export function Header() {
           }`}
         >
           <div className="flex items-center justify-between border-b border-[#d7c7a6] pb-4">
-            <div>
-              <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[#9b7c37]">
-                Renovarte
-              </p>
-              <p className="text-xl font-semibold">Pisos</p>
+            <div className="flex items-center gap-3">
+              <span className="relative h-14 w-14 overflow-hidden rounded-full border border-[#b8954d]/60 bg-[#0e0c09] shadow-[0_0_26px_rgba(184,149,77,0.22)]">
+                <Image
+                  src={company.logo}
+                  alt="Logo Renovarte Piso"
+                  fill
+                  sizes="56px"
+                  className="object-cover"
+                />
+              </span>
+              <div>
+                <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[#9b7c37]">
+                  Renovarte
+                </p>
+                <p className="text-xl font-semibold">Pisos</p>
+                <a
+                  href={phoneHref}
+                  className="mt-1 block text-xs font-medium text-[#6d6253]"
+                >
+                  {company.phoneDisplay}
+                </a>
+              </div>
             </div>
             <button
               type="button"

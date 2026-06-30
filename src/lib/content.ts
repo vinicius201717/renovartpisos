@@ -3,19 +3,22 @@ import type { ImageProps } from "next/image";
 export const company = {
   name: "Renovarte Pisos",
   descriptor: "Limpeza técnica, polimento e restauração de pisos nobres",
-  phoneDisplay: "(00) 00000-0000",
-  whatsappNumber: "5500000000000",
-  city: "Sao Paulo",
-  region: "SP",
+  phoneDisplay: "+55 62 98468-0782",
+  whatsappNumber: "5562984680782",
+  city: "Goiânia",
+  region: "GO",
   address: "Endereco comercial a definir",
+  logo: "/images/brand/renovarte-logo-transparent.png",
 };
 
 export const whatsappMessage =
-  "Olá, gostaria de solicitar um diagnóstico para limpeza pós-obra/restauração de pedra. Posso enviar fotos?";
+  "Olá, vim pelo site da Renovarte Pisos e gostaria de solicitar um orçamento para limpeza pós-obra/restauração de pedra. Posso enviar fotos e vídeos do local?";
 
 export const whatsappHref = `https://wa.me/${company.whatsappNumber}?text=${encodeURIComponent(
   whatsappMessage,
 )}`;
+
+export const phoneHref = "tel:+5562984680782";
 
 export const navItems = [
   { label: "Início", id: "inicio" },
