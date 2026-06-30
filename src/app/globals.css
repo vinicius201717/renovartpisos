@@ -1,26 +1,115 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #f6f1e8;
+  --foreground: #201d18;
+  --graphite: #171715;
+  --champagne: #d9be7b;
+  --stone: #e7dccb;
+  --mineral: #48665a;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --font-sans: "Geist", "Geist Fallback", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "Geist Mono", "Geist Mono Fallback", ui-monospace, monospace;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  background: var(--background);
 }
 
 body {
-  background: var(--background);
+  margin: 0;
+  background:
+    radial-gradient(circle at 12% 8%, rgba(217, 190, 123, 0.18), transparent 26rem),
+    linear-gradient(180deg, #faf7ef 0%, #f6f1e8 38%, #efe5d5 100%);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-sans);
+}
+
+button,
+a,
+summary {
+  -webkit-tap-highlight-color: transparent;
+}
+
+::selection {
+  background: rgba(72, 102, 90, 0.25);
+  color: #171715;
+}
+
+.section-kicker {
+  color: #8a6b2e;
+  font-size: 0.76rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  line-height: 1.4;
+  text-transform: uppercase;
+}
+
+.section-title {
+  color: #201d18;
+  font-size: 2.35rem;
+  font-weight: 650;
+  letter-spacing: 0;
+  line-height: 0.98;
+  text-wrap: balance;
+}
+
+.section-title-light {
+  color: #fffaf0;
+  font-size: 2.35rem;
+  font-weight: 650;
+  letter-spacing: 0;
+  line-height: 0.98;
+  text-wrap: balance;
+}
+
+.section-copy {
+  color: #5f594f;
+  font-size: 1.05rem;
+  line-height: 1.8;
+  margin-top: 1.25rem;
+  max-width: 45rem;
+}
+
+.section-copy-light {
+  color: rgba(255, 250, 240, 0.76);
+  font-size: 1.05rem;
+  line-height: 1.8;
+  margin-top: 1.25rem;
+  max-width: 45rem;
+}
+
+.noise-layer {
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.04) 1px, transparent 1px);
+  background-size: 42px 42px;
+}
+
+@media (min-width: 768px) {
+  .section-title,
+  .section-title-light {
+    font-size: 4rem;
+  }
+
+  .section-copy,
+  .section-copy-light {
+    font-size: 1.15rem;
+  }
+}
+
+@media (min-width: 1180px) {
+  .section-title,
+  .section-title-light {
+    font-size: 4.8rem;
+  }
 }
